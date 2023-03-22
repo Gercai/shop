@@ -16,7 +16,7 @@ export const Home = () => {
         </p>
         <Link
           className="d-flex align-self-center"
-          to={`/`}
+          to={`/products/`}
           style={{ textDecoration: "none", color: "black" }}
         >
           <button className="btn-12">CHECK PRODUCTS</button>
