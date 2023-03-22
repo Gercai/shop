@@ -15,7 +15,7 @@ export const incrementCart = (cartItems, changeItem,setCartItems) => {
 
  
 const newItem = cartItems.map((item) => {
-    if(item.id === changeItem.id && item.count > 0){
+    if(item.id === changeItem.id){
         let quant = item.count + 1;
         let newItem = {...item, count: quant};
         return newItem
@@ -23,14 +23,16 @@ const newItem = cartItems.map((item) => {
         let newItem = item;
         return newItem;
     }
-})
+}).filter(item => item.count >0)
+
+
 setCartItems(newItem); 
 }
 
 export const decrementCart = (cartItems, changeItem,setCartItems) => {
 
     const newItem = cartItems.map((item) => {
-        if(item.id === changeItem.id && item.count > 0){
+        if(item.id === changeItem.id){
             let quant = item.count - 1;
             let newItem = {...item, count: quant};
             return newItem
@@ -38,12 +40,8 @@ export const decrementCart = (cartItems, changeItem,setCartItems) => {
             let newItem = item;
             return newItem;
         }
-    })
+    }).filter(item => item.count >0)
     setCartItems(newItem); 
-    
-
-
-
 }
 
 
