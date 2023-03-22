@@ -6,6 +6,7 @@ import Link from "@mui/material/Link";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -105,7 +106,7 @@ export const ProductDetails = () => {
               },
             }}
           >
-            Add
+            <AiOutlineShoppingCart />
           </Button>
         </Typography>
       </Container>
