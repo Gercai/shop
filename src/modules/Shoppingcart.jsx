@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import '../css/shoppingcart.scss';
 
-export const Shoppingcart = ({cartItems}) => {
+export const ShoppingCart = ({cartItems}) => {
 
 const [gesamtPreis, setGesamtPreis] = useState();
 
