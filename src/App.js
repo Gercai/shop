@@ -4,6 +4,7 @@ import { Footer } from "./modules/Footer.jsx";
 import { Navbar } from "./modules/Navbar.jsx";
 import { ProductCard } from "./modules/ProductCard.jsx";
 import { ShoppingCart } from "./modules/ShoppingCart.jsx";
+import { Home } from "./modules/Home.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -26,6 +27,7 @@ number: 2},
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<ProductCard />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
         <Route to="/shoppingcart" element={<ShoppingCart cartItems = {cartItems}

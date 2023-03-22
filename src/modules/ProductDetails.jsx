@@ -3,22 +3,36 @@ import Container from "@mui/material/Container";
 import { Button } from "@mui/material";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const ProductDetails = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [product, setProduct] = useState([]);
+
+  function clickgoBack() {
+    navigate(-1);
+  }
+
+  useEffect(() => {
+    axios
+      .get(`https://store-mockup-backend.onrender.com/api/items/${id}`)
+      .then((response) => {
+        console.log(response);
+        setProduct(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div>
       <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          MUI
+        <Link underline="hover" color="inherit" href="/products">
+          Products
         </Link>
-        <Link
-          underline="hover"
-          color="inherit"
-          href="/material-ui/getting-started/installation/"
-        >
-          Core
-        </Link>
-        <Typography color="text.primary">Breadcrumbs</Typography>
+        <Typography color="text.primary">{product.title}</Typography>
       </Breadcrumbs>
       <Container
         id="itemPageImageBox"
@@ -26,7 +40,7 @@ export const ProductDetails = () => {
         sx={{ mb: 3 }}
         maxWidth="sm"
         style={{
-          backgroundImage: `url("https://picsum.photos/seed/picsum/200/300")`,
+          backgroundImage: `url(${product.imageurl})`,
           backgroundSize: "cover",
           height: "70vh",
           width: "70vh",
@@ -42,7 +56,9 @@ export const ProductDetails = () => {
           color="textPrimary"
           align="center"
         >
-          <h1>{}</h1>
+          <h1>
+            {product.title} {product.size}
+          </h1>
         </Typography>
       </Container>
       <Container maxWidth="sm" align="center">
@@ -54,8 +70,8 @@ export const ProductDetails = () => {
           align="center"
           sx={{ mb: 4 }}
         >
-          <p>description</p>
-          <p>price</p>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
           <Button
             size="small"
             sx={{
