@@ -1,13 +1,24 @@
 export const addToShopCart = (item,cartItems,setCartItems,setGesamtPreis) => {
     
-    let processingCartItem = {
-        id: item.id,
-        title: item.title,
-        preis: item.price,
-        count: 1
-    };
 
-setCartItems([...cartItems,processingCartItem]);
+    let reject = false;
+
+    cartItems.map((toAdd) => {
+        if(toAdd.id === item.id){
+            reject = true;
+        }
+    })
+    
+    if(reject === false){
+        let processingCartItem = {
+            id: item.id,
+            title: item.title,
+            preis: item.price,
+            count: 1
+        };    
+    setCartItems([...cartItems,processingCartItem]);
+    
+    }
 }
 
 

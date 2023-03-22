@@ -74,7 +74,20 @@ export const CompactCart = ({ cartItems,gesamtPreis,setCartItems }) => {
 }
 
 Total : {gesamtPreis}
-<button>Checkout</button>
+
+<Button
+             size="small"
+             sx={{
+               color: "white",
+               padding: "8px",
+               fontSize: "bold",
+               backgroundColor: "#e89637",
+               "&:hover": {
+                 transform: "scale(1.05)",
+                 backgroundColor: "#e89637",
+               },
+             }}>Checkout</Button>
+      
     </div>
   );
 };
