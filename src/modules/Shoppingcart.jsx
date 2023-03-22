@@ -1,5 +1,3 @@
-export const Shoppingcart = () => {
-
-    return (<div></div>)
-    
-}
+export const ShoppingCart = () => {
+  return <div></div>;
+};
