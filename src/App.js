@@ -9,17 +9,12 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-
   // id, imageURL, category, title, description, size, color
 
-const [cartItems, setCartItems] = useState([{id: 1,
-    title: "greenShirt",
-  preis: 20,
-number: 2}, 
-  {id: 2,
-    title: "greenShirt",
-  preis: 20,
-  number: 1}]);
+  const [cartItems, setCartItems] = useState([
+    { id: 1, title: "greenShirt", preis: 20, number: 2 },
+    { id: 2, title: "greenShirt", preis: 20, number: 1 },
+  ]);
 
   console.log(cartItems);
 
@@ -30,8 +25,10 @@ number: 2},
         <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<ProductCard />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
-        <Route to="/shoppingcart" element={<ShoppingCart cartItems = {cartItems}
-/>}></Route>
+        <Route
+          path="/shoppingcart"
+          element={<ShoppingCart cartItems={cartItems} />}
+        ></Route>
       </Routes>
       <Footer />
     </div>
