@@ -14,16 +14,14 @@ function App() {
 
 const [cartItems, setCartItems] = useState([{id: 1,
     title: "greenShirt",
-  preis: 20},
+  preis: 20,
+number: 2},
   {id: 2,
     title: "greenShirt",
-  preis: 20}]);
+  preis: 20,
+  number: 1}]);
 
   console.log(cartItems);
-
-  // useEffect(()=> {
-  //   setCartItems(initialStateSC);
-  // },[])
 
   return (
     <div className="App">

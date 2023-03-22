@@ -5,12 +5,16 @@ export const Shoppingcart = ({cartItems}) => {
 
 const [gesamtPreis, setGesamtPreis] = useState();
 
-    const calculateCard = () => {
-       let total = cartItems.reduce((acc, cur) => {
-            acc = acc + cur.preis;
-        })
-        setGesamtPreis(total);
-    }
+useEffect(() => {
+    calculateCard();
+},[cartItems])
+    
+const calculateCard = () => {
+    let total = cartItems.reduce((acc, cur) => {
+         acc = acc + cur.preis;
+     })
+     setGesamtPreis(total);
+ }
 
 return cartItems &&(
     <div className="shoppingCard">
@@ -18,10 +22,25 @@ return cartItems &&(
             <div>
                 <p>{item.preis}€</p>
                 <p>{item.title}</p>
-                
         <button>+</button>
         <button>-</button>
             </div>))}
             Total : {gesamtPreis}
     </div>);   
 }
+
+// compactCart ist für die schnellAnsicht
+export const CompactCart = ({cartItems}) => {
+
+    const [gesamtPreis, setGesamtPreis] = useState();
+        const calculateCard = () => {
+           let total = cartItems.reduce((acc, cur) => {
+                acc = acc + cur.preis;
+            })
+            setGesamtPreis(total);
+        }
+    return (<></>)  
+}
+    
+    
+    
