@@ -1,12 +1,10 @@
-import './shop.scss';
-import {Productdetails} from './modules/Productdetails';
-import {Footer} from './modules/Footer';
-import {Navbar} from './modules/Navbar';
-import {ProductCard} from './modules/ProductCard';
-import {Shoppingcart} from './modules/Shoppingcart';
-
-import {useEffect,useState} from 'react';
-
+import "./shop.scss";
+import { ProductDetails } from "./modules/ProductDetails.jsx";
+import { Footer } from "./modules/Footer.jsx";
+import { Navbar } from "./modules/Navbar.jsx";
+import { ProductCard } from "./modules/ProductCard.jsx";
+import { ShoppingCart } from "./modules/ShoppingCart.jsx";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -25,13 +23,14 @@ number: 2},
 
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Shoppingcart
-        cartItems = {cartItems}
-      />
-      <ProductCard></ProductCard>
-      <Productdetails></Productdetails>
-      <Footer></Footer>
+      <Navbar />
+      <Routes>
+        <Route path="/products" element={<ProductCard />}></Route>
+        <Route path="/products/:id" element={<ProductDetails />}></Route>
+        <Route to="/shoppingcart" element={<ShoppingCart cartItems = {cartItems}
+/>}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }
