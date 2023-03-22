@@ -10,7 +10,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEyeFill } from "react-icons/bs";
 import { addToShopCart } from "../functions/shopcartFunctions";
 
-export const ProductCard = ({setCartItems,cartItems}) => {
+export const ProductCard = ({ setCartItems, cartItems }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -93,27 +93,22 @@ export const ProductCard = ({setCartItems,cartItems}) => {
                     <BsEyeFill />
                   </Button>
                 </Link>
-                <Button
-                  size="small"
-                  sx={{
-                    color: "white",
-                    padding: "8px",
-                    fontSize: "bold",
-                    backgroundColor: "#e89637",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                      backgroundColor: "#e89637",
-                    },
-                  }}
-                >
-                  <AiOutlineShoppingCart />
-                </Button>
               </div>
+              <Button
+                size="small"
+                sx={{
+                  color: "white",
+                  padding: "8px",
+                  fontSize: "bold",
+                  backgroundColor: "#e89637",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    backgroundColor: "#e89637",
                   },
                 }}
-                onClick={() => addToShopCart(item,cartItems,setCartItems)}
+                onClick={() => addToShopCart(item, cartItems, setCartItems)}
               >
-                Add
+                <AiOutlineShoppingCart />
               </Button>
             </CardActions>
           </Card>
