@@ -81,7 +81,7 @@ export const ProductCard = ({ setCartItems, cartItems }) => {
                     sx={{
                       color: "white",
                       padding: "8px",
-                      marginRight: "0.25rem",
+                      marginRight: "8px",
                       fontSize: "bold",
                       backgroundColor: "black",
                       "&:hover": {
@@ -93,23 +93,23 @@ export const ProductCard = ({ setCartItems, cartItems }) => {
                     <BsEyeFill />
                   </Button>
                 </Link>
-              </div>
-              <Button
-                size="small"
-                sx={{
-                  color: "white",
-                  padding: "8px",
-                  fontSize: "bold",
-                  backgroundColor: "#e89637",
-                  "&:hover": {
-                    transform: "scale(1.05)",
+                <Button
+                  size="small"
+                  sx={{
+                    color: "white",
+                    padding: "8px",
+                    fontSize: "bold",
                     backgroundColor: "#e89637",
-                  },
-                }}
-                onClick={() => addToShopCart(item, cartItems, setCartItems)}
-              >
-                <AiOutlineShoppingCart />
-              </Button>
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      backgroundColor: "#e89637",
+                    },
+                  }}
+                  onClick={() => addToShopCart(item, cartItems, setCartItems)}
+                >
+                  <AiOutlineShoppingCart />
+                </Button>
+              </div>
             </CardActions>
           </Card>
         ))}
