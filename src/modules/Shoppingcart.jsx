@@ -15,6 +15,14 @@ export const ShoppingCart = ({ cartItems }) => {
     setGesamtPreis(total);
   };
 
+  const increment = (id) => {
+console.log(id)
+}
+
+  const decrement = (id) => {
+console.log(id)
+  }
+
   return (
     cartItems && (
       <div className="shoppingCard">
@@ -22,8 +30,8 @@ export const ShoppingCart = ({ cartItems }) => {
           <div>
             <p>{item.preis}€</p>
             <p>{item.title}</p>
-            <button>+</button>
-            <button>-</button>
+            <button onClick={increment(item.id)}>+</button>
+            <button onClick={decrement(item.id)}>-</button>
           </div>
         ))}
         Total : {gesamtPreis}
