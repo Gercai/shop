@@ -1,3 +1,1 @@
-export const ProductDetails = () => {
-    
-}
+export const ProductDetails = () => {};

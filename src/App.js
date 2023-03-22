@@ -1,15 +1,15 @@
 import "./shop.scss";
-import { ProductDetails } from "./modules/ProductDetails";
-import { Footer } from "./modules/Footer";
-import { Navbar } from "./modules/Navbar";
-import { ProductCard } from "./modules/ProductCard";
-import { ShoppingCart } from "./modules/ShoppingCart";
+import { ProductDetails } from "./modules/ProductDetails.jsx";
+import { Footer } from "./modules/Footer.jsx";
+import { Navbar } from "./modules/Navbar.jsx";
+import { ProductCard } from "./modules/ProductCard.jsx";
+import { ShoppingCart } from "./modules/ShoppingCart.jsx";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Shoppingcart />
+      <ShoppingCart />
       <ProductCard />
       <ProductDetails />
       <Footer />
