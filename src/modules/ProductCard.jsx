@@ -8,8 +8,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEyeFill } from "react-icons/bs";
+import { addToShopCart } from "../functions/shopcartFunctions";
 
-export const ProductCard = () => {
+export const ProductCard = ({setCartItems,cartItems}) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export const ProductCard = () => {
                     component="div"
                     sx={{ color: "black" }}
                   >
-                    {item.title} {item.size}
+                    {item.title} {item.color} {item.size}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {item.description}
@@ -99,6 +100,7 @@ export const ProductCard = () => {
                     padding: "8px",
                     fontSize: "bold",
                     backgroundColor: "#e89637",
+<<<<<<< HEAD
                     "&:hover": {
                       transform: "scale(1.05)",
                       backgroundColor: "#e89637",
@@ -108,6 +110,14 @@ export const ProductCard = () => {
                   <AiOutlineShoppingCart />
                 </Button>
               </div>
+=======
+                  },
+                }}
+                onClick={() => addToShopCart(item,cartItems,setCartItems)}
+              >
+                Add
+              </Button>
+>>>>>>> main
             </CardActions>
           </Card>
         ))}

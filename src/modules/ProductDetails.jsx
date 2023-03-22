@@ -26,6 +26,13 @@ export const ProductDetails = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleRemove = () => {
+    axios
+      .delete(`https://store-mockup-backend.onrender.com/api/items/${id}`)
+      .then((res) => navigate("/products"))
+      .catch((e) => console.log(e));
+  };
+
   return (
     <div>
       <nav aria-label="breadcrumb">
@@ -70,7 +77,7 @@ export const ProductDetails = () => {
           align="center"
         >
           <h1>
-            {product.title} {product.size}
+            {product.title} {product.color} {product.size}
           </h1>
         </Typography>
       </Container>
@@ -99,6 +106,33 @@ export const ProductDetails = () => {
             }}
           >
             Add
+          </Button>
+        </Typography>
+      </Container>
+      <Container maxWidth="sm" align="center">
+        <Typography
+          gutterBottom
+          variant="paragraph"
+          component="div"
+          color="textSecondary"
+          align="center"
+          sx={{ mb: 4 }}
+        >
+          <Button
+            onClick={handleRemove}
+            size="small"
+            sx={{
+              color: "white",
+              padding: "8px",
+              fontSize: "bold",
+              backgroundColor: "#AAA",
+              "&:hover": {
+                transform: "scale(1.05)",
+                backgroundColor: "#AAA",
+              },
+            }}
+          >
+            Remove item
           </Button>
         </Typography>
       </Container>
