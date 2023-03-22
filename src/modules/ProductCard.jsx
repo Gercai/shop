@@ -100,7 +100,6 @@ export const ProductCard = ({setCartItems,cartItems}) => {
                     padding: "8px",
                     fontSize: "bold",
                     backgroundColor: "#e89637",
-<<<<<<< HEAD
                     "&:hover": {
                       transform: "scale(1.05)",
                       backgroundColor: "#e89637",
@@ -110,14 +109,12 @@ export const ProductCard = ({setCartItems,cartItems}) => {
                   <AiOutlineShoppingCart />
                 </Button>
               </div>
-=======
                   },
                 }}
                 onClick={() => addToShopCart(item,cartItems,setCartItems)}
               >
                 Add
               </Button>
->>>>>>> main
             </CardActions>
           </Card>
         ))}
