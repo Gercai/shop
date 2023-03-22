@@ -36,7 +36,6 @@ const newItem = cartItems.map((item) => {
     }
 }).filter(item => item.count >0)
 
-
 setCartItems(newItem); 
 }
 
@@ -61,3 +60,7 @@ export const calculatePrice = (cartItems, setGesamtPreis) => {
     ,0);
     setGesamtPreis(total);
 };
+
+export const checkout = () => {
+    alert('In Progress');
+}
