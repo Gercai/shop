@@ -5,6 +5,7 @@ import { Navbar } from "./modules/Navbar.jsx";
 import { ProductCard } from "./modules/ProductCard.jsx";
 import { ShoppingCart } from "./modules/ShoppingCart.jsx";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 const [cartItems, setCartItems] = useState([{id: 1,
     title: "greenShirt",
   preis: 20,
-number: 2},
+number: 2}, 
   {id: 2,
     title: "greenShirt",
   preis: 20,
