@@ -13,8 +13,8 @@ export const InsertForm = () => {
 	const handleSubmit = (e) => {
 	  e.preventDefault();
 	  axios
-		 .post(`${process.env.REACT_APP_SERVER_BASE_URL}/api/products`, product)
-		 .then((res) => navigate(`/product/${res.data.id}`))
+		 .post(`https://store-mockup-backend.onrender.com/api/items`, product)
+		 .then((res) => navigate(`/products/${res.data.id}`))
 		 .catch((e) => console.log(e));
 	};
 
@@ -45,7 +45,7 @@ export const InsertForm = () => {
 			</label>
 
 			<label>
-				Price: <input name="price" type="text" value="" onChange={handleChange}/>
+				Price: <input name="price" type="text" defaultValue="" onChange={handleChange}/>
 			</label>
 
 			<button type="submit">Insert</button>

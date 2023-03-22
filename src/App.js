@@ -31,9 +31,9 @@ function App() {
           path="/shoppingcart"
           element={<ShoppingCart cartItems={cartItems} />}
         ></Route>
+        <Route path="/admin" element={<InsertForm />}></Route>
       </Routes>
       <Footer />
-		<InsertForm />
     </div>
   );
 }
