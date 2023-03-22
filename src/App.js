@@ -8,6 +8,7 @@ import { ShoppingCart } from "./modules/ShoppingCart.jsx";
 import { Home } from "./modules/Home.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { InsertForm } from "./modules/InsertForm.jsx"
 
 function App() {
   // id, imageURL, category, title, description, size, color
@@ -30,6 +31,7 @@ function App() {
           path="/shoppingcart"
           element={<ShoppingCart cartItems={cartItems} />}
         ></Route>
+        <Route path="/admin" element={<InsertForm />}></Route>
       </Routes>
       <Footer />
     </div>
