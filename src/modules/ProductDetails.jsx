@@ -97,7 +97,8 @@ export const ProductDetails = () => {
             size="small"
             sx={{
               color: "white",
-              padding: "8px",
+              padding: "12px",
+              width: "100px",
               fontSize: "bold",
               backgroundColor: "#e89637",
               "&:hover": {
@@ -106,7 +107,7 @@ export const ProductDetails = () => {
               },
             }}
           >
-            <AiOutlineShoppingCart />
+            <AiOutlineShoppingCart style={{ fontSize: "1.5em" }} />
           </Button>
         </Typography>
       </Container>
