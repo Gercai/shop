@@ -18,7 +18,7 @@ export const Footer = () => {
         <Link
           className="d-flex align-self-center"
           style={{ color: "white", paddingBottom: "1rem" }}
-          to={/admin/}
+          to="/admin/"
         >
           ADMIN
         </Link>
