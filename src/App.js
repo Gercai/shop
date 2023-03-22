@@ -4,31 +4,49 @@ import { ProductDetails } from "./modules/ProductDetails.jsx";
 import { Footer } from "./modules/Footer.jsx";
 import { Navbar } from "./modules/Navbar.jsx";
 import { ProductCard } from "./modules/ProductCard.jsx";
-import { ShoppingCart } from "./modules/ShoppingCart.jsx";
+import { ShoppingCart, CompactCart } from "./modules/ShoppingCart.jsx";
 import { Home } from "./modules/Home.jsx";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { calculatePrice } from "./functions/shopcartFunctions";
+
 
 function App() {
   // id, imageURL, category, title, description, size, color
+  const [cartItems, setCartItems] = useState([]);
+  const [gesamtPreis, setGesamtPreis] = useState(0);
 
-  const [cartItems, setCartItems] = useState([
-    { id: 1, title: "greenShirt", preis: 20, number: 2 },
-    { id: 2, title: "greenShirt", preis: 20, number: 1 },
-  ]);
-
-  console.log(cartItems);
+useEffect(() => {
+  calculatePrice(cartItems,setGesamtPreis)
+},[cartItems])
 
   return (
     <div className="App">
       <Navbar />
+     {cartItems.length?<CompactCart 
+     cartItems={cartItems}
+     setCartItems={setCartItems} 
+     gesamtPreis={gesamtPreis}
+     setGesamtPreis={setGesamtPreis}></CompactCart>:""}
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/products" element={<ProductCard />}></Route>
-        <Route path="/products/:id" element={<ProductDetails />}></Route>
+        <Route path="/products" element={<ProductCard 
+        
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        />}></Route>
+        <Route path="/products/:id" element={<ProductDetails 
+        setCartItems={setCartItems} 
+        gesamtPreis={gesamtPreis}
+        />}></Route>
         <Route
           path="/shoppingcart"
-          element={<ShoppingCart cartItems={cartItems} />}
+          element={<ShoppingCart 
+            cartItems={cartItems} 
+            setCartItems={setCartItems} 
+            gesamtPreis={gesamtPreis}
+            setGesamtPreis={setGesamtPreis}
+            />}
         ></Route>
       </Routes>
       <Footer />

@@ -6,8 +6,9 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { addToShopCart } from "../functions/shopcartFunctions";
 
-export const ProductCard = () => {
+export const ProductCard = ({setCartItems,cartItems}) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -79,6 +80,7 @@ export const ProductCard = () => {
                     backgroundColor: "#e89637",
                   },
                 }}
+                onClick={() => addToShopCart(item,cartItems,setCartItems)}
               >
                 Add
               </Button>
