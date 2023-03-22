@@ -1,4 +1,5 @@
 import "./shop.scss";
+import "./css/navifooter.scss";
 import { ProductDetails } from "./modules/ProductDetails.jsx";
 import { Footer } from "./modules/Footer.jsx";
 import { Navbar } from "./modules/Navbar.jsx";

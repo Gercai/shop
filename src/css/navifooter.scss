@@ -1,0 +1,44 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+nav {
+	margin: 2rem 1rem;
+}
+
+nav ul {
+
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+} 
+
+nav ul li {
+	list-style: none;
+} 
+
+nav ul li a {
+	list-style: none;
+	text-decoration: none;
+	color: black;
+} 
+
+
+footer {
+	display: flex;
+	justify-content: center;
+	/* */
+	background-color: black;
+	color: white;
+
+}
+
+
+/* ------------------------------- */
+@media only screen and (max-width: 576px) {
+	body {
+	  background-color: rgb(163, 163, 163);
+	}
+ }
