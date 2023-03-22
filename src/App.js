@@ -9,7 +9,7 @@ import { Home } from "./modules/Home.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { calculatePrice } from "./functions/shopcartFunctions";
-
+import { InsertForm } from "./modules/InsertForm.jsx"
 
 function App() {
   // id, imageURL, category, title, description, size, color
@@ -48,6 +48,7 @@ useEffect(() => {
             setGesamtPreis={setGesamtPreis}
             />}
         ></Route>
+        <Route path="/admin" element={<InsertForm />}></Route>
       </Routes>
       <Footer />
     </div>

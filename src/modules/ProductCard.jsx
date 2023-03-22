@@ -52,7 +52,7 @@ export const ProductCard = ({setCartItems,cartItems}) => {
                     component="div"
                     sx={{ color: "black" }}
                   >
-                    {item.title} {item.size}
+                    {item.title} {item.color} {item.size}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {item.description}

@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
 	
 	return (
 	  <footer>
-		  <div>footer gruppe 1 shop</div> 
+		  <div>shop group 1 <Link to={`/admin/`}>admin</Link></div> 
 	  </footer>
 	)
 }
