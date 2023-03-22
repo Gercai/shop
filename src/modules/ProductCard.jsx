@@ -6,6 +6,8 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsEyeFill } from "react-icons/bs";
 import { addToShopCart } from "../functions/shopcartFunctions";
 
 export const ProductCard = ({setCartItems,cartItems}) => {
@@ -29,7 +31,7 @@ export const ProductCard = ({setCartItems,cartItems}) => {
             sx={{
               maxWidth: 300,
               margin: "0.75rem",
-              "&:hover": { boxShadow: "10px 10px 2px 1px #f7e5cb" },
+              "&:hover": { boxShadow: "8px 8px 2px 1px #d3d3d3" },
             }}
             className="itemCard"
           >
@@ -48,7 +50,7 @@ export const ProductCard = ({setCartItems,cartItems}) => {
                 <CardContent>
                   <Typography
                     gutterBottom
-                    variant="h5"
+                    variant="h6"
                     component="div"
                     sx={{ color: "black" }}
                   >
@@ -68,22 +70,54 @@ export const ProductCard = ({setCartItems,cartItems}) => {
               >
                 {item.price}€
               </Typography>
-              <Button
-                size="small"
-                sx={{
-                  color: "white",
-                  padding: "8px",
-                  fontSize: "bold",
-                  backgroundColor: "#e89637",
-                  "&:hover": {
-                    transform: "scale(1.05)",
+              <div>
+                <Link
+                  className="link"
+                  to={`/products/${item.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    size="small"
+                    sx={{
+                      color: "white",
+                      padding: "8px",
+                      marginRight: "0.25rem",
+                      fontSize: "bold",
+                      backgroundColor: "black",
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                        backgroundColor: "black",
+                      },
+                    }}
+                  >
+                    <BsEyeFill />
+                  </Button>
+                </Link>
+                <Button
+                  size="small"
+                  sx={{
+                    color: "white",
+                    padding: "8px",
+                    fontSize: "bold",
                     backgroundColor: "#e89637",
+<<<<<<< HEAD
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      backgroundColor: "#e89637",
+                    },
+                  }}
+                >
+                  <AiOutlineShoppingCart />
+                </Button>
+              </div>
+=======
                   },
                 }}
                 onClick={() => addToShopCart(item,cartItems,setCartItems)}
               >
                 Add
               </Button>
+>>>>>>> main
             </CardActions>
           </Card>
         ))}

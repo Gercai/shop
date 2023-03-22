@@ -35,12 +35,25 @@ export const ProductDetails = () => {
 
   return (
     <div>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/products">
-          Products
-        </Link>
-        <Typography color="text.primary">{product.title}</Typography>
-      </Breadcrumbs>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a
+              style={{
+                color: "grey",
+                textWeight: 700,
+                cursor: "pointer",
+              }}
+              onClick={clickgoBack}
+            >
+              Products
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {product.title}
+          </li>
+        </ol>
+      </nav>
       <Container
         id="itemPageImageBox"
         align="center"
