@@ -9,3 +9,12 @@ $secondary-color: #F7E5CB;
     align-items: center;
     border-radius: 10px;
 }
+
+.compactCart{
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    top:0;
+    right:0;
+    // background-color: $primary-color;
+}
